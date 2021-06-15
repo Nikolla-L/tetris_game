@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+div {
+    background-color: yellow;
+    width: 20px;
+    height: 20px;
+}
+.game {
+    margin-top:100px;
+}
+.grid {
+    background-color: blue;
+    height: 400px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.previous-grid {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.previous-shape {
+    height: 80px;
+    width: 80px;
+}
+.block {
+    background-color: blue;
+}
+.block2 {
+    background-color: purple;
+}
+.block3 {
+    background-color: green;
+}

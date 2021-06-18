@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     const  tTetromino = [
         [1, width, width+1, width+2],
-        [width+1, width+2, width*2, width*2+1],
+        [1, width+1, width+2, width*2+1],
         [width, width+1, width+2, width*2+1],
         [1, width, width+1, width*2+1]
     ];
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //ტეტრომინოს ტრიალი
     function rotate() {
         undraw();
-        currentRotation ++;
+        currentRotation++;
         if (currentRotation === current.length) {
             currentRotation = 0;
         }
@@ -129,11 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //გადაკეტვა დაბლა
     function freeze() {
-        if (current.some( index => squares[currentPosition + index + width].classList.contains('block3')) 
-        || squares[currentPosition + index + width].classList.contains('block2')) {
+        if (current.some(index => squares[currentPosition + index + width].classList.contains('block3') || squares[currentPosition + index + width].classList.contains('block2'))) {
             current.forEach( index => squares[index + currentPosition].classList.add('block2'));
             random = nextRandom;
-            nextRandom = Math.floor(Matnh.random() * theTetrominoes.length);
+            nextRandom = Math.floor(Math.random() * theTetrominoes.length);
             current = theTetrominoes[random][currentRotation];
             currentPosition = 4;
             draw();
